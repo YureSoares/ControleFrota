@@ -154,7 +154,7 @@
         android:id="@+id/layout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:gravity="center">
 
         <Button
@@ -164,6 +164,17 @@
             android:background="@color/green"
             android:gravity="center_vertical"
             android:text="Iniciar"
+            android:textColor="@color/light_gray"
+            app:backgroundTint="@color/green" />
+
+        <Button
+            android:id="@+id/btn_historico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="50dp"
+            android:text="HISTORICO"
             android:textColor="@color/light_gray"
             app:backgroundTint="@color/green" />
 

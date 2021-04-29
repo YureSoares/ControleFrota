@@ -1,5 +1,6 @@
 package com.example.controlefrota;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ResourceCursorAdapter;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -18,9 +18,8 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity/* implements View.OnClickListener*/ {
+public class MainActivity extends AppCompatActivity {
 
-    //private ViewHolder mViewHolder = new ViewHolder();
 
     private	ImageView img_logo;
     private TextView tv_car;
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity/* implements View.OnClickLis
     private TextView tv_title_dt_end;
     private TextView tv_text_dt_end;
     private Button btnIniciar;
+    private Button btnHistorico;
     private boolean btnAtivo;
     private Date dtAtual;
     private SimpleDateFormat formataData;
@@ -49,18 +49,7 @@ public class MainActivity extends AppCompatActivity/* implements View.OnClickLis
         init();
 
         eventoBtnIniciar();
-        eventoSpCar();
-
-
-
-
-    }
-
-    private void eventoSpCar(){
-           // listCar = ArrayAdapter.createFromResource(this,R.array.carros,);
-           // listCar.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            //String[] lsCar = getResources().getStringArray(R.array.carros);
-        //sp_car.setAdapter(new ArrayAdapter<String>(this,R.layout.activity_main,lsCar));
+        eventoBtnHistorico();
 
     }
 
@@ -69,13 +58,9 @@ public class MainActivity extends AppCompatActivity/* implements View.OnClickLis
             @Override
             public void onClick(View view) {
 
-
-
-
-
                         if (btnAtivo == true){
                             if(et_km_start.getText().toString().isEmpty()){
-                                Toast.makeText(MainActivity.this,"Preencha KM inicio!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this,"Preencha KM Inicio!", Toast.LENGTH_SHORT).show();
                             }else {
                                 et_km_start.setEnabled(false);
                                 et_km_end.setEnabled(true);
@@ -109,15 +94,17 @@ public class MainActivity extends AppCompatActivity/* implements View.OnClickLis
                             }
                         }
 
-
-
-
-
-
-
-
             }
         });
+    }
+
+    private void eventoBtnHistorico() {
+        btnHistorico.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {
+            Intent it = new Intent(MainActivity.this, HistoricoViagens.class);
+            startActivity(it);
+        }
+    });
     }
 
 
@@ -137,6 +124,7 @@ public class MainActivity extends AppCompatActivity/* implements View.OnClickLis
         tv_title_dt_end = findViewById(R.id.tv_title_dt_end);
         tv_text_dt_end = findViewById(R.id.tv_text_dt_end);
         btnIniciar = findViewById(R.id.btnIniciar);
+        btnHistorico = findViewById(R.id.btn_historico);
         dtAtual = new Date();
         formataData = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
         et_km_end.setEnabled(false);
@@ -151,6 +139,7 @@ public class MainActivity extends AppCompatActivity/* implements View.OnClickLis
         tv_text_dt_start.setText("");
         et_km_end.setText("");
         btnAtivo = true;
+        btnHistorico.setVisibility(View.VISIBLE);
     }
 
 

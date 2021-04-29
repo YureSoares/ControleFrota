@@ -6,7 +6,7 @@
 
     <ListView
         android:id="@+id/lv_hist"
-        android:layout_width="wrap_content"
+        android:layout_width="500dp"
         android:layout_height="597dp" />
     <LinearLayout
         android:id="@+id/layout_btn"
