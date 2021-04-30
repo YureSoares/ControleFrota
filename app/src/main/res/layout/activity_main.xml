@@ -9,176 +9,188 @@
     android:padding="15dp"
     tools:context=".MainActivity">
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:id="@+id/img_logo"
-        android:src="@mipmap/img_logo_foreground" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/layout_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tv_car"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Carro:" />
+            android:orientation="vertical" >
 
-        <Spinner
-            android:id="@+id/sp_car"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:entries="@array/carros"
-            android:layout_marginLeft="65dp" />
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/img_logo_foreground" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/layout_fuel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carro:" />
 
-        <TextView
-            android:id="@+id/tv_fuel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Combustivel:" />
+                <Spinner
+                    android:id="@+id/sp_car"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:entries="@array/carros" />
 
-        <SeekBar
-            android:id="@+id/sb_fuel"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_fuel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/layout_km_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_fuel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Combustivel:" />
 
-        <TextView
-            android:id="@+id/tv_km_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="40dp"
-            android:text="KM inicio:" />
+                <SeekBar
+                    android:id="@+id/sb_fuel"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp" />
 
-        <EditText
-            android:id="@+id/et_km_start"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:background="@color/light_gray" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_km_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/layout_dt_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_km_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:text="KM inicio:" />
 
-        <TextView
-            android:id="@+id/tv_title_dt_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="Data/Hora inicio:" />
+                <EditText
+                    android:id="@+id/et_km_start"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_gray"
+                    android:inputType="number" />
 
-        <TextView
-            android:id="@+id/tv_text_dt_start"
-            android:layout_width="210dp"
-            android:layout_height="wrap_content"
-            android:background="@color/light_gray" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_dt_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/layout_km_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_title_dt_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="Data/Hora inicio:" />
 
-        <TextView
-            android:id="@+id/tv_km_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="KM Final:" />
+                <TextView
+                    android:id="@+id/tv_text_dt_start"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_gray" />
 
-        <EditText
-            android:id="@+id/et_km_end"
-            android:layout_width="230dp"
-            android:layout_marginLeft="47dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:background="@color/light_gray" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_km_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/layout_dt_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_km_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KM Final:" />
 
-        <TextView
-            android:id="@+id/tv_title_dt_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data/Hora Final:" />
+                <EditText
+                    android:id="@+id/et_km_end"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="47dp"
+                    android:background="@color/light_gray"
+                    android:inputType="number" />
 
-        <TextView
-            android:id="@+id/tv_text_dt_end"
-            android:layout_marginLeft="25dp"
-            android:layout_width="210dp"
-            android:layout_height="wrap_content"
-            android:background="@color/light_gray" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_dt_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/layout_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center">
+                <TextView
+                    android:id="@+id/tv_title_dt_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data/Hora Final:" />
 
-        <Button
-            android:id="@+id/btnIniciar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/green"
-            android:gravity="center_vertical"
-            android:text="Iniciar"
-            android:textColor="@color/light_gray"
-            app:backgroundTint="@color/green" />
+                <TextView
+                    android:id="@+id/tv_text_dt_end"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:background="@color/light_gray" />
 
-        <Button
-            android:id="@+id/btn_historico"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/green"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="50dp"
-            android:text="HISTORICO"
-            android:textColor="@color/light_gray"
-            app:backgroundTint="@color/green" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnIniciar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    android:gravity="center_vertical"
+                    android:text="Iniciar"
+                    android:textColor="@color/light_gray"
+                    app:backgroundTint="@color/green" />
+
+                <Button
+                    android:id="@+id/btn_historico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/green"
+                    android:gravity="center_vertical"
+                    android:text="HISTORICO"
+                    android:textColor="@color/light_gray"
+                    app:backgroundTint="@color/green" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

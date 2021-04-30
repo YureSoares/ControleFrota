@@ -81,15 +81,16 @@ public class MainActivity extends AppCompatActivity {
                             } else if(Integer.parseInt(et_km_end.getText().toString()) <  Integer.parseInt(et_km_start.getText().toString())) {
                                 Toast.makeText(MainActivity.this, "KM final menor que KM inicial!", Toast.LENGTH_SHORT).show();
                             }else {
+                                dtAtual = new Date();
                                 et_km_start.setEnabled(true);
                                 et_km_end.setEnabled(false);
                                 btnIniciar.setBackgroundColor(getResources().getColor(R.color.green));
                                 btnIniciar.setText("Iniciar");
-                                tv_text_dt_end.setVisibility(View.VISIBLE);
-                                tv_title_dt_end.setVisibility(View.VISIBLE);
                                 tv_text_dt_end.setText(formataData.format(dtAtual));
                                 btnAtivo = true;
                                 init();
+                                insertSingleton();
+
 
                             }
                         }
@@ -107,6 +108,13 @@ public class MainActivity extends AppCompatActivity {
     });
     }
 
+    private void insertSingleton(){
+        // historico = sp_car.get(Integer.valueOf(sp_car.getSelectedItemPosition()));
+        // historico = sp_car.getSelectedItem();
+        Singleton.getInstance().addViagem("Placa: "+  sp_car.getSelectedItem() +
+                 "Inicio:"  + "Fim: " +  formataData.format(dtAtual) );
+
+    }
 
 
     private void init() {
@@ -126,15 +134,15 @@ public class MainActivity extends AppCompatActivity {
         btnIniciar = findViewById(R.id.btnIniciar);
         btnHistorico = findViewById(R.id.btn_historico);
         dtAtual = new Date();
-        formataData = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+        formataData = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         et_km_end.setEnabled(false);
         et_km_end.setBackgroundColor(getResources().getColor(R.color.white));
         tv_title_dt_start.setVisibility(View.INVISIBLE);
         tv_text_dt_start.setVisibility(View.INVISIBLE);
         tv_km_end.setVisibility(View.INVISIBLE);
         et_km_end.setVisibility(View.INVISIBLE);
-        tv_text_dt_end.setVisibility(View.INVISIBLE);
-        tv_title_dt_end.setVisibility(View.INVISIBLE);
+        tv_text_dt_end.setVisibility(View.GONE);
+        tv_title_dt_end.setVisibility(View.GONE);
         et_km_start.setText("");
         tv_text_dt_start.setText("");
         et_km_end.setText("");

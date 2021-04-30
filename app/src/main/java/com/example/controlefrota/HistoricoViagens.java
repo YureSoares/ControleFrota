@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.List;
+
 
 public class HistoricoViagens extends AppCompatActivity {
 
     private ListView LvHist;
-    private String[] historicos;
+    private List historicos;
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -19,18 +21,13 @@ public class HistoricoViagens extends AppCompatActivity {
         setContentView(R.layout.historico_viagens);
 
         init();
-
-
-
-
-
         
     }
 
     private void init(){
         LvHist = findViewById(R.id.lv_hist);
-        historicos = new String[] {"VIAGEM1","VIAGEM2","VIAGEM3"};
-        adapter = new ArrayAdapter<String>(this, android.R.layout.activity_list_item,historicos);
+        historicos =  Singleton.getInstance().getViagens();
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,historicos);
         LvHist.setAdapter(adapter);
     }
 }
