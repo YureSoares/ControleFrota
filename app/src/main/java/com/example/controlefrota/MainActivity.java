@@ -15,6 +15,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.controlefrota.model.Viagem;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Date dtAtual;
     private SimpleDateFormat formataData;
     private ArrayAdapter<CharSequence> listCar;
+    public Viagem viagem = new Viagem();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,10 +112,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void insertSingleton(){
-        // historico = sp_car.get(Integer.valueOf(sp_car.getSelectedItemPosition()));
-        // historico = sp_car.getSelectedItem();
-        Singleton.getInstance().addViagem("Placa: "+  sp_car.getSelectedItem() +
-                 "Inicio:"  + "Fim: " +  formataData.format(dtAtual) );
+        viagem.setPlaca(sp_car.getSelectedItem().toString());
+
+        Singleton.getInstance().addViagem(viagem.getPlaca());
 
     }
 

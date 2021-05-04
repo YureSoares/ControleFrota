@@ -1,17 +1,16 @@
 package com.example.controlefrota;
 
+import com.example.controlefrota.model.Viagem;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Singleton {
     private static Singleton instance;
-    private List<String> lista;
+    private List<Viagem> lista;
 
     private Singleton(){
-        lista  = new ArrayList<String>();
-        /*lista.add("VIAGEM1");
-        lista.add("VIAGEM2");
-        lista.add("VIAGEM3");*/
+        lista  = new ArrayList<Viagem>();
     }
 
     public static Singleton getInstance(){
@@ -21,11 +20,11 @@ public class Singleton {
         return instance;
     }
 
-    public void addViagem(String nameViagem){
+    public void addViagem(Viagem nameViagem){
         lista.add(nameViagem);
     }
 
-    public List<String> getViagens(){
+    public List<Viagem> getViagens(){
         return lista;
     }
 }
