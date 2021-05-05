@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+               // insertSingleton();
                         if (btnAtivo == true){
                             if(et_km_start.getText().toString().isEmpty()){
                                 Toast.makeText(MainActivity.this,"Preencha KM Inicio!", Toast.LENGTH_SHORT).show();
@@ -113,8 +113,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void insertSingleton(){
         viagem.setPlaca(sp_car.getSelectedItem().toString());
+        viagem.setDtInicio(tv_text_dt_start.getText().toString());
+        viagem.setDtEnd(tv_text_dt_end.getText().toString());
+        viagem.setKmInicio(et_km_start.getText().toString());
+        viagem.setKmEnd(et_km_end.getText().toString());
+        viagem.setCombustivel(String.valueOf(sb_fuel.getProgress()));
 
-        Singleton.getInstance().addViagem(viagem.getPlaca());
+        Singleton.getInstance().addViagem(viagem);
 
     }
 

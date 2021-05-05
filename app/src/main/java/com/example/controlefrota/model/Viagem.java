@@ -5,7 +5,6 @@ public class Viagem {
     private String combustivel;
     private String kmInicio;
     private String dtInicio;
-    private String kmFim;
     private String kmEnd;
     private String dtEnd;
 
@@ -41,14 +40,6 @@ public class Viagem {
         this.dtInicio = dtInicio;
     }
 
-    public String getKmFim() {
-        return kmFim;
-    }
-
-    public void setKmFim(String kmFim) {
-        this.kmFim = kmFim;
-    }
-
     public String getKmEnd() {
         return kmEnd;
     }
@@ -63,5 +54,9 @@ public class Viagem {
 
     public void setDtEnd(String dtEnd) {
         this.dtEnd = dtEnd;
+    }
+
+    public String toString(){
+        return "Placa: " + placa + " Data Inicio: "  + dtInicio  + " Data Fim: " + dtEnd  + " Combustivel: " +  combustivel + " KM Inicio: " + kmInicio +  " KM Fim: " + kmEnd;
     }
 }
