@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                                 btnIniciar.setText("Iniciar");
                                 tv_text_dt_end.setText(formataData.format(dtAtual));
                                 btnAtivo = true;
-                                init();
+                                dtAtual = new Date();
                                 insertSingleton();
 
 
@@ -107,17 +107,22 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
             Intent it = new Intent(MainActivity.this, HistoricoViagens.class);
             startActivity(it);
+            finish();
         }
     });
     }
 
+
     private void insertSingleton(){
+        String kmini = et_km_start.getEditableText().toString();
         viagem.setPlaca(sp_car.getSelectedItem().toString());
         viagem.setDtInicio(tv_text_dt_start.getText().toString());
         viagem.setDtEnd(tv_text_dt_end.getText().toString());
         viagem.setKmInicio(et_km_start.getText().toString());
         viagem.setKmEnd(et_km_end.getText().toString());
         viagem.setCombustivel(String.valueOf(sb_fuel.getProgress()));
+
+
 
         Singleton.getInstance().addViagem(viagem);
 
