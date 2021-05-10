@@ -46,7 +46,7 @@ public class HistoricoViagens extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView <?> adapterView, View view, int i, long l) {
                 Intent it = new Intent(HistoricoViagens.this, ResumoViagem.class);
-                it.putExtra("placa", ListViagem.get(i).toString());
+                it.putExtra("placa", ListViagem.get(i).getPlaca().toString());
                 startActivity(it);
                // finish();
             }

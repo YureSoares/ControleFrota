@@ -16,7 +16,6 @@ public class ResumoViagem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resumo_viagem);
 
-        tvPlaca =(TextView)tvPlaca.findViewById(R.id.tv_resumo_viagem_placa);
 
         init();
 
@@ -25,12 +24,14 @@ public class ResumoViagem extends AppCompatActivity {
 
     private void insertParametros(){
 
-       // tvPlaca.setText(intent.getSerializableExtra("placa").toString());
+        tvPlaca.setText(intent.getSerializableExtra("placa").toString());
+
 
     }
 
     private void init(){
-        //tvPlaca =(TextView)tvPlaca.findViewById(R.id.tv_resumo_viagem_placa);
         intent = getIntent();
+        tvPlaca = findViewById(R.id.tv_resumoviagem_placa);
+
     }
 }
