@@ -170,18 +170,18 @@
                     android:id="@+id/btnIniciar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/green"
+                    android:background="@color/orange"
                     android:gravity="center_vertical"
                     android:text="Iniciar"
                     android:textColor="@color/light_gray"
-                    app:backgroundTint="@color/green" />
+                    app:backgroundTint="@color/orange" />
 
                 <Button
                     android:id="@+id/btn_historico"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:background="@color/green"
+                    android:background="@color/orange"
                     android:gravity="center_vertical"
                     android:text="HISTORICO"
                     android:textColor="@color/light_gray"
@@ -191,6 +191,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-
 </LinearLayout>

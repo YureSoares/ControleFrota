@@ -47,6 +47,13 @@ public class HistoricoViagens extends AppCompatActivity {
             public void onItemClick(AdapterView <?> adapterView, View view, int i, long l) {
                 Intent it = new Intent(HistoricoViagens.this, ResumoViagem.class);
                 it.putExtra("placa", ListViagem.get(i).getPlaca().toString());
+                it.putExtra("dtinicio", ListViagem.get(i).getDtInicio().toString());
+                it.putExtra("kminicio", ListViagem.get(i).getKmInicio().toString());
+                it.putExtra("dtend", ListViagem.get(i).getDtEnd().toString());
+                it.putExtra("kmend", ListViagem.get(i).getKmEnd().toString());
+                it.putExtra("combustivel", ListViagem.get(i).getCombustivel().toString());
+
+
                 startActivity(it);
                // finish();
             }

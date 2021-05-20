@@ -6,42 +6,131 @@
     android:padding="5dp">
 
     <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"-->
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-            <TextView
-                android:id="@+id/tv_resumoviagem_placa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="placa"
-                android:textSize="50sp"
-                android:textStyle="bold" />
-            </LinearLayout>
+        <TextView
+            android:id="@+id/tv_resumoviagem_placa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="placa"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kilometragem Inicial:" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_resumoviagem_kminicio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Km inicio"
-                    android:textSize="25sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Inicial:"
+            android:textSize="25sp" />
 
-            </LinearLayout>
+        <TextView
+            android:id="@+id/tv_resumoviagem_dtinicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="data inicial"
+            android:textSize="20sp" />
 
-        </LinearLayout>
+    </LinearLayout>
 
-    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kilometragem Inicial:"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_resumoviagem_kminicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Km inicio"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Final:"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_resumoviagem_dtfim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="data final"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kilometragem Final:"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_resumoviagem_kmfim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Km final"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Combustivel:"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_resumoviagem_combustivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="combustivel"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
