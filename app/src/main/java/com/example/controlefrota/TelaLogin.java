@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.controlefrota.model.TelaCadastro;
-
 public class TelaLogin extends AppCompatActivity {
 
     private TextView tvUser;

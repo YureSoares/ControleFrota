@@ -138,28 +138,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/layout_dt_end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_title_dt_end"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Data/Hora Final:" />
-
-                <TextView
-                    android:id="@+id/tv_text_dt_end"
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:background="@color/light_gray" />
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/layout_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -185,7 +163,7 @@
                     android:gravity="center_vertical"
                     android:text="HISTORICO"
                     android:textColor="@color/light_gray"
-                    app:backgroundTint="@color/green" />
+                    app:backgroundTint="@color/orange" />
 
             </LinearLayout>
 
