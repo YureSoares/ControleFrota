@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/telacadastro_etsenha"
@@ -90,6 +90,17 @@
                     android:layout_gravity="center"
                     android:background="@color/light_gray"
                     android:inputType="textPassword" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/telacadastro_tvmensagem"
+                    android:text="A senha deve conter:\n
+                    *Ao menos 1 caracteres especiais\n
+                    *Ao menos 1 letra maiscula\n
+                    *Ao menos 1 numero\n
+                    *6 ou mais caracteres"
+                    android:textColor="@color/red"/>
 
             </LinearLayout>
 

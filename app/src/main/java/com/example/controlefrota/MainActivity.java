@@ -20,6 +20,8 @@ import com.example.controlefrota.model.Viagem;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Date dtAtual;
     private SimpleDateFormat formataData;
     public Viagem viagem = new Viagem();
+    private Map<String,String> map = new HashMap<String, String>();
     VerificaCampos vc = new VerificaCampos();
 
     @Override
@@ -58,17 +61,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // insertSingleton();
                 if (btnAtivo == true) {
-                    if (et_km_start.getText().toString().isEmpty()) {
-                        Toast.makeText(MainActivity.this, "Preencha KM Inicio!", Toast.LENGTH_SHORT).show();
+                    eventoAdicionaMap(et_km_start.getText().toString(), "KM Inicio");
+                    if(vc.VerificasCamposVazios(map) != "N") {
+                        Toast.makeText(MainActivity.this, vc.VerificasCamposVazios(map) + " está vazio!", Toast.LENGTH_SHORT).show();
                     } else {
                         eventoIniciarViagem();
-                        et_km_end.setText(DataAtual());
                         btnAtivo = false;
                     }
 
                 } else {
-                    if (et_km_end.getText().toString().isEmpty()) {
-                        Toast.makeText(MainActivity.this, "Preencha KM Final!", Toast.LENGTH_SHORT).show();
+                    eventoAdicionaMap(et_km_end.getText().toString(),"KM Fim");
+                    if(vc.VerificasCamposVazios(map) != "N") {
+                        Toast.makeText(MainActivity.this, vc.VerificasCamposVazios(map) + " está vazio!", Toast.LENGTH_SHORT).show();
                     } else if (Integer.parseInt(et_km_end.getText().toString()) < Integer.parseInt(et_km_start.getText().toString())) {
                         Toast.makeText(MainActivity.this, "KM final menor que KM inicial!", Toast.LENGTH_SHORT).show();
                     } else {
@@ -92,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
         tv_km_end.setVisibility(View.GONE);
         et_km_end.getText().clear();
         et_km_end.setVisibility(View.GONE);
-        et_km_end.getText().clear();
         btnIniciar.setBackgroundColor(getResources().getColor(R.color.orange));
         btnIniciar.setText("Iniciar");
 
@@ -127,13 +130,15 @@ public class MainActivity extends AppCompatActivity {
         return String.valueOf(formataData.format(dtAtual)) ;
     }
 
+    private void eventoAdicionaMap(String campo, String nome){
+        map.put(nome,campo);
+    }
+
 
     private void insertSingleton() {
         viagem.setPlaca(sp_car.getSelectedItem().toString());
         viagem.setDtInicio(tv_text_dt_start.getText().toString());
-        dtAtual = new Date();
-        formataData.format(dtAtual);
-        viagem.setDtEnd(formataData.toString());
+        viagem.setDtEnd(DataAtual());
         viagem.setKmInicio(et_km_start.getText().toString());
         viagem.setKmEnd(et_km_end.getText().toString());
         viagem.setCombustivel(String.valueOf(sb_fuel.getProgress()));
