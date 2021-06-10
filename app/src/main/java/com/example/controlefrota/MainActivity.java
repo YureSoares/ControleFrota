@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Spinner sp_car;
-    private SeekBar sb_fuel;
+    private Spinner sp_fuel;
+    //private SeekBar sb_fuel;
     private TextView tv_km_start;
     private EditText et_km_start;
     private TextView tv_title_dt_start;
@@ -141,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         viagem.setDtEnd(DataAtual());
         viagem.setKmInicio(et_km_start.getText().toString());
         viagem.setKmEnd(et_km_end.getText().toString());
-        viagem.setCombustivel(String.valueOf(sb_fuel.getProgress()));
+        viagem.setCombustivel(sp_fuel.getSelectedItem().toString());
 
         Singleton.getInstance().addViagem(viagem);
 
@@ -150,7 +151,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         sp_car = findViewById(R.id.sp_car);
-        sb_fuel = findViewById(R.id.sb_fuel);
+        //sb_fuel = findViewById(R.id.sb_fuel);
+        sp_fuel = findViewById(R.id.sp_fuel);
         tv_km_start = findViewById(R.id.tv_km_start);
         et_km_start = findViewById(R.id.et_km_start);
         tv_title_dt_start = findViewById(R.id.tv_title_dt_start);

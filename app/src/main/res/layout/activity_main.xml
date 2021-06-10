@@ -61,11 +61,17 @@
                     android:layout_height="wrap_content"
                     android:text="Combustivel:" />
 
-                <SeekBar
+                <!--SeekBar
                     android:id="@+id/sb_fuel"
                     android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp" /-->
+                <Spinner
+                    android:layout_width="230dp"
+                    android:id="@+id/sp_fuel"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:entries = "@array/combustivel" />
 
             </LinearLayout>
 
