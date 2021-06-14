@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.controlefrota.control.BancoController;
 import com.example.controlefrota.control.VerificaCampos;
 
 import java.util.HashMap;
@@ -22,6 +23,7 @@ public class TelaCadastro extends AppCompatActivity {
     private TextView tvMensagem;
     private EditText etNome;
     private EditText etEmail;
+    private EditText etLogin;
     private EditText etSenha;
     private Map<String,String> map = new HashMap<String, String>();
     VerificaCampos vc = new VerificaCampos();
@@ -50,6 +52,7 @@ public class TelaCadastro extends AppCompatActivity {
                     Intent it = new Intent(TelaCadastro.this, TelaLogin.class);
                     startActivity(it);
                     finish();
+                    InsereBanco();
                 }
             }
         });
@@ -59,7 +62,9 @@ public class TelaCadastro extends AppCompatActivity {
     private void eventoAdicionaMap(){
        map.put("Nome",etNome.getText().toString());
        map.put("Email",etEmail.getText().toString());
+       map.put("Login",etSenha.getText().toString());
        map.put("Senha",etSenha.getText().toString());
+
 
     }
 
@@ -68,11 +73,25 @@ public class TelaCadastro extends AppCompatActivity {
         etNome = findViewById(R.id.telacadastro_etnome);
         etEmail = findViewById(R.id.telacadastro_etemail);
         etSenha = findViewById(R.id.telacadastro_etsenha);
+        etLogin = findViewById(R.id.telacadastro_etlogin);
         tvMensagem = findViewById(R.id.telacadastro_tvmensagem);
         tvMensagem.setVisibility(View.GONE);
-
-
     };
+
+    private void  InsereBanco(){
+        BancoController crud = new BancoController(getBaseContext());
+
+        String resultado;
+
+        String nome  = etNome.getText().toString();
+        String email = etEmail.getText().toString();
+        String login = etLogin.getText().toString();
+        String senha = etSenha.getText().toString();
+
+        resultado = crud.insereUsuario(nome,email,login,senha);
+
+        Toast.makeText(getApplicationContext(),resultado,Toast.LENGTH_LONG).show();
+    }
 
 
 
