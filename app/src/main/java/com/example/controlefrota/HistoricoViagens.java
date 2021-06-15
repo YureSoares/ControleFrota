@@ -46,12 +46,12 @@ public class HistoricoViagens extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView <?> adapterView, View view, int i, long l) {
                 Intent it = new Intent(HistoricoViagens.this, ResumoViagem.class);
-                it.putExtra("placa", ListViagem.get(i).getPlaca().toString());
-                it.putExtra("dtinicio", ListViagem.get(i).getDtInicio().toString());
-                it.putExtra("kminicio", ListViagem.get(i).getKmInicio().toString());
-                it.putExtra("dtend", ListViagem.get(i).getDtEnd().toString());
-                it.putExtra("kmend", ListViagem.get(i).getKmEnd().toString());
-                it.putExtra("combustivel", ListViagem.get(i).getCombustivel().toString());
+                it.putExtra("placa", ListViagem.get(i).getPLACA().toString());
+                it.putExtra("dtinicio", ListViagem.get(i).getDTINI().toString());
+                it.putExtra("kminicio", ListViagem.get(i).getKMINI().toString());
+                it.putExtra("dtend", ListViagem.get(i).getDTEND().toString());
+                it.putExtra("kmend", ListViagem.get(i).getKMEND().toString());
+                it.putExtra("combustivel", ListViagem.get(i).getCOMBUSTIVEL().toString());
 
 
                 startActivity(it);

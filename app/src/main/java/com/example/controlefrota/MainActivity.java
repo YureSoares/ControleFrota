@@ -137,12 +137,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void insertSingleton() {
-        viagem.setPlaca(sp_car.getSelectedItem().toString());
-        viagem.setDtInicio(tv_text_dt_start.getText().toString());
-        viagem.setDtEnd(DataAtual());
-        viagem.setKmInicio(et_km_start.getText().toString());
-        viagem.setKmEnd(et_km_end.getText().toString());
-        viagem.setCombustivel(sp_fuel.getSelectedItem().toString());
+        viagem.setPLACA(sp_car.getSelectedItem().toString());
+        viagem.setDTINI(tv_text_dt_start.getText().toString());
+        viagem.setDTEND(DataAtual());
+        viagem.setKMINI(et_km_start.getText().toString());
+        viagem.setKMEND(et_km_end.getText().toString());
+        viagem.setCOMBUSTIVEL(sp_fuel.getSelectedItem().toString());
 
         Singleton.getInstance().addViagem(viagem);
 

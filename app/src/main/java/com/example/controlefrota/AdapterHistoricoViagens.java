@@ -46,9 +46,9 @@ public class AdapterHistoricoViagens extends BaseAdapter {
         TextView dataInicio = view.findViewById(R.id.tv_data_inicio);
         TextView dataFim = view.findViewById(R.id.tv_data_fim);
 
-        placa.setText(viagem.getPlaca());
-        dataInicio.setText(viagem.getDtInicio());
-        dataFim.setText(viagem.getDtEnd());
+        placa.setText(viagem.getPLACA());
+        dataInicio.setText(viagem.getDTINI());
+        dataFim.setText(viagem.getDTEND());
 
         return view;
     }

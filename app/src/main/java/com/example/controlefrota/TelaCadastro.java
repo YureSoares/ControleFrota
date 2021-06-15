@@ -1,6 +1,7 @@
 package com.example.controlefrota;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -92,6 +93,14 @@ public class TelaCadastro extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),resultado,Toast.LENGTH_LONG).show();
     }
+
+   /* private Cursor carregaDados(){
+
+        BancoController crud = new BancoController(getBaseContext());
+        Cursor cursor = crud.carregaDados();
+
+
+    }*/
 
 
 

@@ -2,6 +2,8 @@ package com.example.controlefrota.control;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.controlefrota.CriaBanco;
@@ -35,6 +37,20 @@ public class BancoController {
             return "Registro Inserido com sucesso";
 
 
+    }
+
+    public Cursor carregaDados(){
+        Cursor cursor;
+        String[] campos = {"usu_login","usu_email"};
+        cursor = db.query(banco.NOME_BANCO,campos,null,null,null,null,null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+
+        db.close();
+
+        return cursor;
     }
 }
 

@@ -1,62 +1,65 @@
 package com.example.controlefrota.model;
 
 public class Viagem {
-    private String placa;
-    private String combustivel;
-    private String kmInicio;
-    private String dtInicio;
-    private String kmEnd;
-    private String dtEnd;
+    private String ID;
+    private String USUARIO;
+    private String CARRO;
+    private String PLACA;
+    private String COMBUSTIVEL;
+    private String KMINI;
+    private String KMEND;
+    private String DTINI;
+    private String DTEND;
 
-    public String getPlaca() {
-        return placa;
+    public String getPLACA() {
+        return PLACA;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setPLACA(String placa) {
+        this.PLACA = placa;
     }
 
-    public String getCombustivel() {
-        return combustivel;
+    public String getCOMBUSTIVEL() {
+        return COMBUSTIVEL;
     }
 
-    public void setCombustivel(String combustivel) {
-        this.combustivel = combustivel;
+    public void setCOMBUSTIVEL(String combustivel) {
+        this.COMBUSTIVEL = combustivel;
     }
 
-    public String getKmInicio() {
-        return kmInicio;
+    public String getKMINI() {
+        return KMINI;
     }
 
-    public void setKmInicio(String kmInicio) {
-        this.kmInicio = kmInicio;
+    public void setKMINI(String kmInicio) {
+        this.KMINI = kmInicio;
     }
 
-    public String getDtInicio() {
-        return dtInicio;
+    public String getKMEND() {
+        return KMEND;
     }
 
-    public void setDtInicio(String dtInicio) {
-        this.dtInicio = dtInicio;
+    public void setKMEND(String kmEnd) {
+        this.KMEND = kmEnd;
     }
 
-    public String getKmEnd() {
-        return kmEnd;
+    public String getDTINI() {
+        return DTINI;
     }
 
-    public void setKmEnd(String kmEnd) {
-        this.kmEnd = kmEnd;
+    public void setDTINI(String dtInicio) {
+        this.DTINI = dtInicio;
     }
 
-    public String getDtEnd() {
-        return dtEnd;
+    public String getDTEND() {
+        return DTEND;
     }
 
-    public void setDtEnd(String dtEnd) {
-        this.dtEnd = dtEnd;
+    public void setDTEND(String dtEnd) {
+        this.DTEND = dtEnd;
     }
 
     public String toString(){
-        return "Placa: " + placa + " Data Inicio: "  + dtInicio  + " Data Fim: " + dtEnd  + " Combustivel: " +  combustivel + " KM Inicio: " + kmInicio +  " KM Fim: " + kmEnd;
+        return "Placa: " + PLACA + " Data Inicio: "  + DTINI  + " Data Fim: " + DTEND  + " Combustivel: " +  COMBUSTIVEL + " KM Inicio: " + KMINI +  " KM Fim: " + KMEND;
     }
 }
