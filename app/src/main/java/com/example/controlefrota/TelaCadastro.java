@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.controlefrota.control.BancoController;
 import com.example.controlefrota.control.VerificaCampos;
+import com.example.controlefrota.dao.usuarioDAO;
+import com.example.controlefrota.model.Usuario;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,7 +55,8 @@ public class TelaCadastro extends AppCompatActivity {
                     Intent it = new Intent(TelaCadastro.this, TelaLogin.class);
                     startActivity(it);
                     finish();
-                    InsereBanco();
+                    InsereUsuario();
+                    //InsereBanco();
                 }
             }
         });
@@ -94,15 +97,18 @@ public class TelaCadastro extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),resultado,Toast.LENGTH_LONG).show();
     }
 
-   /* private Cursor carregaDados(){
+    private void InsereUsuario(){
 
-        BancoController crud = new BancoController(getBaseContext());
-        Cursor cursor = crud.carregaDados();
+        Usuario usu = new Usuario();
+        usuarioDAO udao = new usuarioDAO(getBaseContext());
 
+        usu.setNOME(etNome.getText().toString());
+        usu.setEMAIL(etEmail.getText().toString());
+        usu.setLOGIN(etLogin.getText().toString());
+        usu.setSENHA(etSenha.getText().toString());
 
-    }*/
+       boolean inserted = udao.insertValues(usu);
 
-
-
+   }
 
 }

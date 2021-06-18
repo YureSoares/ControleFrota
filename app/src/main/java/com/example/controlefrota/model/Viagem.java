@@ -11,6 +11,30 @@ public class Viagem {
     private String DTINI;
     private String DTEND;
 
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String id) {
+        this.ID = id;
+    }
+
+    public String getUSUARIO() {
+        return USUARIO;
+    }
+
+    public void setUSUARIO(String usuario) {
+        this.USUARIO = usuario;
+    }
+
+    public String getCARRO() {
+        return CARRO;
+    }
+
+    public void setCARRO(String carro) {
+        this.CARRO = carro;
+    }
+
     public String getPLACA() {
         return PLACA;
     }

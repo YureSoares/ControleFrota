@@ -39,18 +39,5 @@ public class BancoController {
 
     }
 
-    public Cursor carregaDados(){
-        Cursor cursor;
-        String[] campos = {"usu_login","usu_email"};
-        cursor = db.query(banco.NOME_BANCO,campos,null,null,null,null,null);
-
-        if(cursor!=null){
-            cursor.moveToFirst();
-        }
-
-        db.close();
-
-        return cursor;
-    }
 }
 
