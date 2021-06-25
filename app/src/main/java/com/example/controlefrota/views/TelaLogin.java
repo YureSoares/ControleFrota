@@ -1,4 +1,4 @@
-package com.example.controlefrota;
+package com.example.controlefrota.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.controlefrota.R;
+import com.example.controlefrota.Singleton;
 import com.example.controlefrota.control.VerificaCampos;
+import com.example.controlefrota.dao.usuarioDAO;
+import com.example.controlefrota.dao.viagemDAO;
+import com.example.controlefrota.model.Usuario;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +29,8 @@ public class TelaLogin extends AppCompatActivity {
     private Button btnEntrar;
     private Button btnCadastro;
     private Map<String,String> map = new HashMap<String, String>();
+    usuarioDAO uDAO = new usuarioDAO(getBaseContext());
+
     VerificaCampos vc = new VerificaCampos();
 
     @Override
@@ -46,6 +53,7 @@ public class TelaLogin extends AppCompatActivity {
                 }
                 else {
                     Intent it = new Intent(TelaLogin.this, MainActivity.class);
+                    it.putExtra("usuario", etUser.getText().toString());
                     startActivity(it);
                 }
             }
@@ -71,6 +79,9 @@ public class TelaLogin extends AppCompatActivity {
 
     }
 
+    private
+
+
     private void init(){
           tvUser = findViewById(R.id.telalogin_tvuser);
           etUser = findViewById(R.id.telalogin_etuser);
@@ -78,5 +89,7 @@ public class TelaLogin extends AppCompatActivity {
           etPass = findViewById(R.id.telalogin_etpass);
           btnEntrar = findViewById(R.id.telalogin_btnentrar);
           btnCadastro = findViewById(R.id.telalogin_btncadastro);
+
     }
+
 }

@@ -1,13 +1,17 @@
 package com.example.controlefrota.dao;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.example.controlefrota.CriaBanco;
-import com.example.controlefrota.model.Carro;
 import com.example.controlefrota.model.Viagem;
 
 public class viagemDAO {
+
+    private SQLiteDatabase db;
+    private CriaBanco banco;
 
     private String ID = "vgm_id";
     private String USUARIO = "usu_id";
@@ -18,6 +22,10 @@ public class viagemDAO {
     private String KMEND = "vgm_kmend";
     private String DTINI = "vgm_dtini";
     private String DTEND = "vgm_dtend";
+
+    public viagemDAO(Context context){
+        banco = new CriaBanco(context);
+    }
 
     public Viagem cursorValues(Cursor c){
 
@@ -36,26 +44,49 @@ public class viagemDAO {
         return viagem;
     }
 
-    /*public String insereUsuario(String nome, String email, String login, String senha){
-        ContentValues valores;
-        long resultado;
+    public ContentValues toValues(Viagem viagem) {
 
+        ContentValues cv = new ContentValues();
+
+        cv.put(ID, viagem.getID());
+        cv.put(USUARIO,  viagem.getUSUARIO());
+        cv.put(CARRO, viagem.getCARRO());
+        cv.put(PLACA, viagem.getPLACA());
+        cv.put(COMBUSTIVEL, viagem.getCOMBUSTIVEL());
+        cv.put(KMINI, viagem.getKMINI());
+        cv.put(KMEND, viagem.getKMEND());
+        cv.put(DTINI, viagem.getDTINI());
+        cv.put(DTEND, viagem.getDTEND());
+
+        return cv;
+    }
+
+    public boolean insertValues(Viagem viagem) {
+        boolean inserted = false;
         db = banco.getWritableDatabase();
-        valores = new ContentValues();
-        valores.put("usu_nome",nome);
-        valores.put("usu_email",email);
-        valores.put("usu_login",login);
-        valores.put("usu_senha",senha);
 
-        resultado = db.insert(CriaBanco.USUARIO,null,valores);
-        db.close();
+        try {
 
-        if(resultado == -1)
-            return "Erro ao inserir registro";
-        else
-            return "Registro Inserido com sucesso";
+            long a = db.insert(CriaBanco.VIAGEM,null,toValues(viagem));
 
+            if (a == 1)
 
-    }*/
+                inserted = true;
+
+            else
+
+                inserted = false;
+
+        }catch (Exception e) {
+
+            inserted = false;
+            e.printStackTrace();
+
+        } finally {
+            db.close();
+        }
+
+        return inserted;
+    }
 
 }

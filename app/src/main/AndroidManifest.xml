@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ControleFrota">
         <activity
-            android:name=".TelaCadastro"
+            android:name=".views.TelaCadastro"
             android:label="@string/title_activity_tela_cadastro"
             android:theme="@style/Theme.ControleFrota.NoActionBar"></activity>
         <activity
-            android:name=".TelaLogin"
+            android:name=".views.TelaLogin"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ResumoViagem" />
-        <activity android:name=".HistoricoViagens" />
+        <activity android:name=".views.ResumoViagem" />
+        <activity android:name=".views.HistoricoViagens" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:theme="@style/Theme.ControleFrota" />
     </application>
 

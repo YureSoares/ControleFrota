@@ -1,4 +1,4 @@
-package com.example.controlefrota;
+package com.example.controlefrota.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.controlefrota.R;
+import com.example.controlefrota.Singleton;
 import com.example.controlefrota.model.Viagem;
 
 import java.util.List;

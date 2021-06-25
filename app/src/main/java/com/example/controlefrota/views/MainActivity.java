@@ -1,4 +1,4 @@
-package com.example.controlefrota;
+package com.example.controlefrota.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,16 +6,16 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.controlefrota.R;
+import com.example.controlefrota.Singleton;
 import com.example.controlefrota.control.VerificaCampos;
+import com.example.controlefrota.dao.viagemDAO;
 import com.example.controlefrota.model.Viagem;
 
 import java.text.SimpleDateFormat;
@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Spinner sp_car;
     private Spinner sp_fuel;
-    //private SeekBar sb_fuel;
     private TextView tv_km_start;
     private EditText et_km_start;
     private TextView tv_title_dt_start;
@@ -137,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void insertSingleton() {
+       // viagem.setUSUARIO();
         viagem.setPLACA(sp_car.getSelectedItem().toString());
         viagem.setDTINI(tv_text_dt_start.getText().toString());
         viagem.setDTEND(DataAtual());
@@ -144,10 +144,15 @@ public class MainActivity extends AppCompatActivity {
         viagem.setKMEND(et_km_end.getText().toString());
         viagem.setCOMBUSTIVEL(sp_fuel.getSelectedItem().toString());
 
+        viagemDAO vDAO = new viagemDAO(getBaseContext());
+
+        vDAO.insertValues(viagem);
+
         Singleton.getInstance().addViagem(viagem);
 
     }
 
+   // private
 
     private void init() {
         sp_car = findViewById(R.id.sp_car);

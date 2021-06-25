@@ -2,8 +2,6 @@ package com.example.controlefrota.control;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.controlefrota.CriaBanco;

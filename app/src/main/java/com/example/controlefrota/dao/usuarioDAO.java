@@ -8,9 +8,13 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.controlefrota.CriaBanco;
 import com.example.controlefrota.model.Usuario;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class usuarioDAO {
 
     private SQLiteDatabase db;
+    private CriaBanco banco;
 
     private String ID = "usu_id";
     private String NOME = "usu_nome";
@@ -18,7 +22,7 @@ public class usuarioDAO {
     private String LOGIN = "usu_login";
     private String SENHA = "usu_senha";
 
-    private CriaBanco banco;
+
     public usuarioDAO(Context context){
         banco = new CriaBanco(context);
     }
@@ -72,6 +76,27 @@ public class usuarioDAO {
         }
 
         return inserted;
+    }
+
+    public List<Usuario> loadByCheckList(Integer cod_checklist) {
+        String query = "SELECT * FROM " + banco.USUARIO ;
+
+        db = banco.getWritableDatabase();
+
+        Cursor c = db.rawQuery(query, null);
+
+        List<Usuario> usuario = new ArrayList<Usuario>();
+
+        try{
+            while (c.moveToNext()){
+                usuario.add(cursorValues(c));
+            }
+        }finally {
+            c.close();
+            db.close();
+        }
+
+        return usuario;
     }
 
 }
