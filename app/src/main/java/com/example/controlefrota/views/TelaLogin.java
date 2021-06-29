@@ -79,8 +79,6 @@ public class TelaLogin extends AppCompatActivity {
 
     }
 
-    private
-
 
     private void init(){
           tvUser = findViewById(R.id.telalogin_tvuser);
